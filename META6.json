@@ -1,5 +1,5 @@
 {
-  "auth": "cpan:AVERNA",
+  "auth": "zef:averna",
   "authors": [
     "Sarah Fuller"
   ],
@@ -10,7 +10,7 @@
     "JSON::Fast",
     "Data::Dump"
   ],
-  "description": "blah blah blah",
+  "description": "A raku-lang API client for Shodan.",
   "license": "Artistic-2.0",
   "name": "Shodan",
   "perl": "6.d",
@@ -34,5 +34,5 @@
   "test-depends": [
     "Test"
   ],
-  "version": "0.0.1"
+  "version": "0.0.2"
 }
