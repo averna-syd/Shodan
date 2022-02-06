@@ -16,6 +16,6 @@ isa-ok($shodan.query-search(query => 'webcam', page => 1), Hash, '.query-search 
 
 isa-ok($shodan.query-tags(), Hash, '.query-tags without optional vars');
 
-isa-ok($shodan.query-tags(), Hash, '.query-tags with optional vars');
+isa-ok($shodan.query-tags(size => 10), Hash, '.query-tags with optional vars');
 
 done-testing;
