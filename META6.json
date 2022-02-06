@@ -1,0 +1,37 @@
+{
+  "authors": [
+    "Sarah Fuller"
+  ],
+  "build-depends": [
+  ],
+  "depends": [
+    "Cro::HTTP::Client",
+    "JSON::Fast",
+    "Data::Dump"
+  ],
+  "description": "blah blah blah",
+  "license": "Artistic-2.0",
+  "name": "Shodan",
+  "perl": "6.d",
+  "provides": {
+    "Shodan": "lib/Shodan.rakumod",
+    "Shodan::API": "lib/Shodan/API.rakumod",
+    "Shodan::API::Exploit": "lib/Shodan/API/Exploit.rakumod",
+    "Shodan::API::REST": "lib/Shodan/API/REST.rakumod",
+    "Shodan::API::Stream": "lib/Shodan/API/Stream.rakumod",
+    "Shodan::HTTP": "lib/Shodan/HTTP.rakumod"
+  },
+  "resources": [
+  ],
+  "source-url": "https://github.com/averna-syd/Shodan.git",
+  "tags": [
+    "SHODAN",
+    "API",
+    "SECURITY",
+    "WEB"
+  ],
+  "test-depends": [
+    "Test"
+  ],
+  "version": "0.0.1"
+}

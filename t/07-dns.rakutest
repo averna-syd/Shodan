@@ -1,0 +1,17 @@
+use Test;
+use Shodan;
+
+plan :skip-all<Author tests not required for installation> unless (%*ENV{'SHODAN_TESTING'});
+plan 4;
+
+my $shodan = Shodan.new(api-key => %*ENV{'SHODAN_API_KEY'});
+
+isa-ok($shodan.dns-domain(domain => 'google.com'), Hash, '.dns-domain without optional vars');
+
+isa-ok($shodan.dns-domain(domain => 'google.com', history => True, type => 'A', page => 1), Hash, '.dns-domain with optional vars');
+
+isa-ok($shodan.dns-resolve(hostnames => 'google.com'), Hash, '.dns-resolve');
+
+isa-ok($shodan.dns-reverse(ips => '8.8.8.8'), Hash, '.dns-reverse');
+
+done-testing;

@@ -1,0 +1,27 @@
+use Test;
+use Shodan;
+
+plan :skip-all<Author tests not required for installation> unless (%*ENV{'SHODAN_TESTING'});
+plan 9;
+
+my $shodan = Shodan.new(api-key => %*ENV{'SHODAN_API_KEY'});
+
+isa-ok($shodan.host(ip => '8.8.8.8'), 'Hash', '.host without optional vars');
+
+isa-ok($shodan.host(ip => '8.8.8.8', history => True, minify => True), 'Hash', '.host with optional vars');
+
+isa-ok($shodan.host-count(query => 'port:22'), 'Hash', '.host-count without optional vars');
+
+isa-ok($shodan.host-count(query => 'port:22', facets => 'org,os'), 'Hash', '.host-count with optional vars');
+
+isa-ok($shodan.host-search(query => 'port:22'), 'Hash', '.host-search without optiona vars');
+
+isa-ok($shodan.host-search(query => 'port:22', facets => 'org,os', page => 2, minify => True), 'Hash', '.host-search with optional vars');
+
+isa-ok($shodan.host-search-facets(), 'Array', '.search-facets');
+
+isa-ok($shodan.host-search-filters(), 'Array', '.search-filters');
+
+isa-ok($shodan.search-tokens(query => 'Raspbian port:22'), 'Hash', '.search-tokens');
+
+done-testing;
